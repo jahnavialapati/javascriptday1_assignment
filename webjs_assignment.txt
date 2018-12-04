@@ -5,22 +5,91 @@
    Navigator,history,window,location,screen
 
 3.1. Find out most commonly used functions(minimum 4) of "document" object and write their purpose with a code snippet which proves the purpose.
-     document.getElementById(id)	Find an element by element id
-     document.getElementsByTagName(name)	Find elements by tag name
-     document.getElementsByClassName(name)	Find elements by class name
-     document.createElement(element)	Create an HTML element
-     document.removeChild(element)	Remove an HTML element
-     document.appendChild(element)	Add an HTML element
-     document.replaceChild(element)	Replace an HTML element
-     document.write(text)	Write into the HTML output stream
+ 1)  document.getElementById(id)	Find an element by element id
+     CODE SNIPPET:
+     <p id="demo">Click the button to change the text in this paragraph.</p>
+     <button onclick="myFunction()">Try it</button>
+     <script>
+     function myFunction() {
+     document.getElementById("demo").innerHTML = "Hello World";
+     }
+     </script>
+     
+ 2)  document.createElement(element)	Create an HTML element
+     CODE SNIPPET:
+     <p>Click the button to make a BUTTON element.</p>
+     <button onclick="myFunction()">Try it</button>
+     <script>
+     function myFunction() {
+     var btn = document.createElement("BUTTON");
+     document.body.appendChild(btn);
+     }
+     </script>
+
+  3) document.removeChild(element)	Remove an HTML element
+     CODE SNIPPET:
+     <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+     <p>Click the button to remove the first item from the list.</p>
+     <button onclick="myFunction()">Try it</button>
+     <script>
+     function myFunction() {
+     var list = document.getElementById("myList");
+     list.removeChild(list.childNodes[0]);
+     }
+     </script>
+
+ 4)  document.appendChild(element)	Add an HTML element
+     <script>
+    function myFunction() {
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode("Water");
+    node.appendChild(textnode);
+    document.getElementById("myList").appendChild(node);
+   }
+   </script>
+5)  document.replaceChild(element)	Replace an HTML element
+    <script>
+    function myFunction() {
+    var textnode = document.createTextNode("Water");
+    var item = document.getElementById("myList").childNodes[0];
+    item.replaceChild(textnode, item.childNodes[0]);
+    }
+    </script>
+    
 
 3.2. Find out most commonly used functions(minimum 4) of "window" object and write their purpose with a code snippet which proves the purpose.
-     window.innerHeight - the inner height of the browser window (in pixels)
-     window.innerWidth - the inner width of the browser window (in pixels)
-     window.open() - open a new window
-     window.close() - close the current window
-     window.moveTo() -move the current window
-     window.resizeTo() -resize the current window
+ 1)  window.innerHeight - the inner height of the browser window (in pixels)
+ 2)  window.innerWidth - the inner width of the browser window (in pixels)
+     CODE SNIPPET:
+     <button onclick="myFunction()">Try it</button>
+     <p>The innerWidth and innerHeight properties are not supported in IE8 and earlier.</p>
+     <p id="demo"></p>
+     <script>
+     function myFunction() {
+     var w = window.innerWidth;
+     var h = window.innerHeight;
+     document.getElementById("demo").innerHTML = "Width: " + w + "<br>Height: " + h;
+     }
+    </script>     
+
+ 3)  window.open() - open a new window
+     code snippet:
+     <script>
+     window.open("https://www.w3schools.com");
+     </script>
+
+ 4)  window.resizeTo() -resize the current window
+     CODE SNIPPET:
+     <script>
+     var myWindow;
+     function openWin() {
+     myWindow = window.open("", "", "width=100, height=100");
+     }
+    function resizeWin() {
+    myWindow.resizeTo(250, 250);
+    }
+   </script>
+ 
 
 4. Create an HTML page with a button on it, when the button is clicked, it should display an alert box with text "Hello World".
    <!DOCTYPE html>
