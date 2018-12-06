@@ -1,0 +1,10 @@
+body{
+    font-size: 80%;
+    font-family: arial;
+    background-color: lightgray;
+    margin: 20px;
+}
+#name,#email{
+    width:600px;
+}
+
